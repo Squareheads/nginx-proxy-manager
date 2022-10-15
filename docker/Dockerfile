@@ -17,6 +17,8 @@ ENV SUPPRESS_NO_CONFIG_WARNING=1 \
 	NPM_BUILD_VERSION="${BUILD_VERSION}" \
 	NPM_BUILD_COMMIT="${BUILD_COMMIT}" \
 	NPM_BUILD_DATE="${BUILD_DATE}"
+	
+RUN apt-get install mysql-server
 
 RUN echo "fs.file-max = 65535" > /etc/sysctl.conf \
 	&& apt-get update \
